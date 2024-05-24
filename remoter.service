@@ -1,0 +1,18 @@
+[Unit]
+Description=Remoter Linux server
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Environment="DISPLAY=:0"
+ExecStart=/home/jzupko/projects/remoter/remoter
+Group=jzupko
+KillMode=process
+Restart=always
+RestartSec=5
+Type=simple
+User=jzupko
+WorkingDirectory=/home/jzupko/projects/remoter
+
+[Install]
+WantedBy=multi-user.target
